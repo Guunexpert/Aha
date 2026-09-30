@@ -6,7 +6,7 @@
 from source
 
 ```bash
-git clone https://
+git clone https://github.com/Guunexpert/Aha
 cd AhaSR
 zig build run-program
 ```
