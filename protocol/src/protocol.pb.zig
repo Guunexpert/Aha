@@ -46289,11 +46289,11 @@ pub const SyncTurnFoodNotify = struct {
 };
 
 pub const SetTurnFoodSwitchCsReq = struct {
-    FEBKMOCOJLE: bool = false,
+    toggle_on: bool = false,
     KLAJGAKAFCP: TurnFoodSwitch = @enumFromInt(0),
 
     pub const _desc_table = .{
-        .FEBKMOCOJLE = fd(1, .{ .Varint = .Simple }),
+        .toggle_on = fd(1, .{ .Varint = .Simple }),
         .KLAJGAKAFCP = fd(9, .{ .Varint = .Simple }),
     };
 
@@ -46302,12 +46302,12 @@ pub const SetTurnFoodSwitchCsReq = struct {
 
 pub const SetTurnFoodSwitchScRsp = struct {
     retcode: u32 = 0,
-    FEBKMOCOJLE: bool = false,
+    toggle_on: bool = false,
     KLAJGAKAFCP: TurnFoodSwitch = @enumFromInt(0),
 
     pub const _desc_table = .{
         .retcode = fd(1, .{ .Varint = .Simple }),
-        .FEBKMOCOJLE = fd(4, .{ .Varint = .Simple }),
+        .toggle_on = fd(4, .{ .Varint = .Simple }),
         .KLAJGAKAFCP = fd(12, .{ .Varint = .Simple }),
     };
 
@@ -59484,11 +59484,11 @@ pub const IBKDHOIDKJA = struct {
 };
 
 pub const CEDCMIMKJHK = struct {
-    FEBKMOCOJLE: bool = false,
+    toggle_on: bool = false,
     avatar_id: u32 = 0,
 
     pub const _desc_table = .{
-        .FEBKMOCOJLE = fd(12, .{ .Varint = .Simple }),
+        .toggle_on = fd(12, .{ .Varint = .Simple }),
         .avatar_id = fd(15, .{ .Varint = .Simple }),
     };
 
@@ -72180,12 +72180,12 @@ pub const CityShopInfoScNotify = struct {
 };
 
 pub const JJJOADIAEOH = struct {
-    FEBKMOCOJLE: bool = false,
+    toggle_on: bool = false,
     avatar_id: u32 = 0,
     skill_id: u32 = 0,
 
     pub const _desc_table = .{
-        .FEBKMOCOJLE = fd(3, .{ .Varint = .Simple }),
+        .toggle_on = fd(3, .{ .Varint = .Simple }),
         .avatar_id = fd(8, .{ .Varint = .Simple }),
         .skill_id = fd(14, .{ .Varint = .Simple }),
     };
@@ -72193,21 +72193,21 @@ pub const JJJOADIAEOH = struct {
     pub usingnamespace protobuf.MessageMixins(@This());
 };
 
-pub const KBGCPGGAHJK = struct {
+pub const ToggleAvatarGlobalBuffCsReq = struct {
     avatar_id: u32 = 0,
-    FEBKMOCOJLE: bool = false,
+    toggle_on: bool = false,
     skill_id: u32 = 0,
 
     pub const _desc_table = .{
         .avatar_id = fd(2, .{ .Varint = .Simple }),
-        .FEBKMOCOJLE = fd(12, .{ .Varint = .Simple }),
+        .toggle_on = fd(12, .{ .Varint = .Simple }),
         .skill_id = fd(13, .{ .Varint = .Simple }),
     };
 
     pub usingnamespace protobuf.MessageMixins(@This());
 };
 
-pub const IPMDPMECLCP = struct {
+pub const ToggleAvatarGlobalBuffScRsp = struct {
     CIKPBGDIABO: ?JJJOADIAEOH = null,
     retcode: u32 = 0,
 

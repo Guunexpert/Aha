@@ -16,7 +16,6 @@ pub var AvatarSkinMap = [_]struct {
     .{ .avatar_id = 1415, .skin_id = 1141501 },
     .{ .avatar_id = 1407, .skin_id = 1140701 },
     .{ .avatar_id = 1501, .skin_id = 1150101 },
-    .{ .avatar_id = 1505, .skin_id = 1150501 },
 };
 
 // Battle group

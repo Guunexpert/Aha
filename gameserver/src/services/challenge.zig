@@ -22,34 +22,35 @@ pub fn onGetChallenge(session: *Session, _: *const Packet, allocator: Allocator)
     var rsp = protocol.GetChallengeScRsp.init(allocator);
     rsp.retcode = 0;
 
-    var arena = std.heap.ArenaAllocator.init(allocator);
-    defer arena.deinit();
-    const a = arena.allocator();
+    //var arena = std.heap.ArenaAllocator.init(allocator);
+    //defer arena.deinit();
+    //const a = arena.allocator();
 
-    try rsp.max_level_list.ensureTotalCapacity(challenge_config.challenge_config.items.len);
-    try rsp.challenge_list.ensureTotalCapacity(challenge_config.challenge_config.items.len);
+    //try rsp.max_level_list.ensureTotalCapacity(challenge_config.challenge_config.items.len);
+    //try rsp.challenge_list.ensureTotalCapacity(challenge_config.challenge_config.items.len);
 
     for (challenge_config.challenge_config.items) |ids| {
-        var challenge = protocol.Challenge.init(a);
-        var history = protocol.ChallengeHistoryMaxLevel.init(a);
+        //var challenge = protocol.Challenge.init(a);
+        //var history = protocol.ChallengeHistoryMaxLevel.init(a);
+        var challenge = protocol.Challenge.init(allocator);
 
         challenge.challenge_id = ids.id;
         challenge.star = 7;
         challenge.taken_reward = 42;
 
-        history.level = 12;
-        history.reward_display_type = 101212;
+        //history.level = 12;
+        //history.reward_display_type = 101212;
 
         if (ids.id > 20000) {
-            history.level = 4;
-            history.reward_display_type = 101404;
+            //history.level = 4;
+            //history.reward_display_type = 101404;
             if (ids.id < 30000) {
                 challenge.score_id = 40000;
                 challenge.score_two = 40000;
             }
         }
 
-        try rsp.max_level_list.append(history);
+        //try rsp.max_level_list.append(history);
         try rsp.challenge_list.append(challenge);
     }
 
